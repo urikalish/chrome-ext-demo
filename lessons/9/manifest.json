@@ -1,0 +1,31 @@
+{
+  "name": "Octanetopus",
+  "version": "1.0.9",
+  "description": "Octane Chrome Extension",
+  "manifest_version": 2,
+  "icons": {
+    "48": "img/icon48.png",
+    "96": "img/icon96.png",
+    "128": "img/icon128.png"
+  },
+  "content_scripts": [
+  ],
+  "browser_action": {
+    "default_title": "Octanetopus",
+    "default_icon": "img/icon96.png",
+    "default_popup": "popup/octanetopus-popup.html"
+  },
+  "background": {
+    "scripts": [
+      "background/octanetopus-background.js"
+    ]
+  },
+  "permissions": [
+    "tabs",
+    "http://*/*",
+    "https://*/*"
+  ],
+  "web_accessible_resources": [
+    "inject/octanetopus-inject-script.js"
+  ]
+}
