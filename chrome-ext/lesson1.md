@@ -8,4 +8,4 @@
 
 * Extensions tab, developer mode + warning
 
-* Manegement - load, enable, disable, refresh, errors
+* Management - load, enable, disable, refresh, errors
