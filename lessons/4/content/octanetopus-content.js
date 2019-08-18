@@ -2,25 +2,28 @@ const log = (msg) => {
 	console.log(`OCTANETOPUS | ${msg}`);
 };
 
-const waitForLoad = (selectorToFind, onLoadCallback, maxNumberOfTries = 30, retryFrequencyMillis = 1000, curTryNumber = 1) => {
-	log(`waitForLoad - try #${curTryNumber}`);
+const waitForAppReadyMaxNumberOfTries = 30;
+const waitForAppReadyRetryFrequencyMillis = 1000;
+const waitForAppReady = (selectorToFind, onAppReady, curTryNumber = 1) => {
+	log(`waitForAppReady - try #${curTryNumber}`);
 	const elm = document.querySelector(selectorToFind);
 	if (elm) {
-		log('loaded');
-		onLoadCallback();
-	} else if (curTryNumber < maxNumberOfTries) {
+		log('app ready');
+		onAppReady();
+	} else if (curTryNumber < waitForAppReadyMaxNumberOfTries) {
 		log('Unable to find DOM element - will try again');
 		setTimeout(() => {
-			waitForLoad(selectorToFind, onLoadCallback, maxNumberOfTries, retryFrequencyMillis, curTryNumber+1);
-			},
-			retryFrequencyMillis
+			waitForAppReady(selectorToFind, onAppReady, curTryNumber+1);
+		},
+		waitForAppReadyRetryFrequencyMillis
 		);
 	} else {
 		log('max number of retries exceeded - give up');
 	}
 };
 
-const onLoad = () => {
+const onAppReady = () => {
+	log('onAppReady');
 	addSelfEsteemBooster();
 };
 
@@ -38,5 +41,10 @@ const addSelfEsteemBooster = () => {
 	}
 };
 
+const go = () => {
+	log('go');
+	waitForAppReady('.mqm-masthead > .masthead-bg-color > div > div:nth-child(2)', onAppReady);
+};
+
 log('content script loaded');
-waitForLoad('.mqm-masthead > .masthead-bg-color > div > div:nth-child(2)', onLoad);
+go();
