@@ -2,7 +2,7 @@ const log = (msg) => {
 	console.log(`OCTANETOPUS CONTENT SCRIPT | ${msg}`);
 };
 
-const waitForLoad = (selectorToFind, onLoadCallback, maxNumberOfTries = 10, retryFrequencyMillis = 1000, curTryNumber = 1) => {
+const waitForLoad = (selectorToFind, onLoadCallback, maxNumberOfTries = 30, retryFrequencyMillis = 1000, curTryNumber = 1) => {
 	log(`waitForLoad - try #${curTryNumber}`);
 	const elm = document.querySelector(selectorToFind);
 	if (elm) {

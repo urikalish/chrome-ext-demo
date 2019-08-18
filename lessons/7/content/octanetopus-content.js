@@ -19,7 +19,7 @@ const init = () => {
 	);
 };
 
-const waitForAppReady = (selectorToFind, onLoadCallback, maxNumberOfTries = 10, retryFrequencyMillis = 1000, curTryNumber = 1) => {
+const waitForAppReady = (selectorToFind, onLoadCallback, maxNumberOfTries = 30, retryFrequencyMillis = 1000, curTryNumber = 1) => {
 	log(`waitForAppReady - try #${curTryNumber}`);
 	const elm = document.querySelector(selectorToFind);
 	if (elm) {
