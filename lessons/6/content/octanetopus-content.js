@@ -12,7 +12,7 @@ const init = () => {
 		},
 		(response) => {
 			if (response.type === 'octanetopus-background-to-content--greeting') {
-				alert(response.data.greeting);
+				alert(`Content script received message "${response.data.greeting}"`);
 			}
 		}
 	);

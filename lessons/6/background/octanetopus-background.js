@@ -18,7 +18,7 @@ const ensureConfigInStorage = () => {
 const addMessageListener = () => {
 	chrome.runtime.onMessage.addListener((request, sender, responseFunc) => {
 		if (request.type === 'octanetopus-content-to-background--greeting') {
-			alert(request.data.greeting);
+			alert(`Background page received message "${request.data.greeting}"`);
 			log('send greeting to content script');
 			responseFunc(
 				{
