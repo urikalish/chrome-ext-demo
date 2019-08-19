@@ -80,6 +80,7 @@ const addSelfEsteemBooster = () => {
 
 const go = () => {
 	log('go');
+	document.body.setAttribute('octanetopus-content-injected', 'true');
 	document.addEventListener('octanetopus-app-to-content--user', (e) => {
 		log('octanetopus-app-to-content--user');
 		alert(`Hi ${e.detail}`);
