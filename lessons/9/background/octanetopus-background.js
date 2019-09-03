@@ -1,7 +1,7 @@
 const localStorageConfigKey = 'octanetopus-config';
 const defaultConfigObj = {
 	url: 'localhost:9090/ui/',
-	color: '#0073e7'
+	btnColor: '#0079e7'
 };
 const jsCheckScript = 'content/octanetopus-check.js';
 const cssContentScript = 'content/octanetopus-content.css';

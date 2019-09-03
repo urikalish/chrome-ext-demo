@@ -69,8 +69,8 @@ const addSelfEsteemBooster = () => {
 		btnElm.textContent = 'SELF-ESTEEM++';
 		btnElm.classList.add('button--primary', 'margin-r--sm');
 		btnElm.style['border'] = '1px solid #fff';
-		if (config.color) {
-			btnElm.style['background-color'] = config.color;
+		if (config && config.btnColor) {
+			btnElm.style['background-color'] = config.btnColor;
 		}
 		btnElm.addEventListener('click', () => {alert('You Are Amazing!');});
 		parentElm.appendChild(btnElm);
