@@ -11,8 +11,6 @@
     "default_icon": "img/icon128.png",
     "default_popup": "popup/octanetopus-popup.html"
   },
-  "content_scripts": [
-  ],
   "background": {
     "scripts": [
       "background/octanetopus-background.js"
