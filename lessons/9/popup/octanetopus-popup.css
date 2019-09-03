@@ -25,6 +25,7 @@ button[disabled] {
 .octanetopus-popup__header__image {
 	width: 30px;
 	height: 30px;
+	border-radius: 50%;
 }
 
 .octanetopus-popup__header__title {
