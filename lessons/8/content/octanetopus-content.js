@@ -25,7 +25,7 @@ const waitForConfig = (onConfigReady, curTryNumber = 1) => {
 
 const onConfigReady = () => {
 	log('onConfigReady');
-	waitForAppReady('.mqm-masthead > .masthead-bg-color > div > div:nth-child(2)', onAppReady);
+	waitForAppReady('.mqm-masthead', onAppReady);
 };
 
 const waitForAppReadyMaxNumberOfTries = 30;

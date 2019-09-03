@@ -55,7 +55,7 @@ const go = () => {
 		}
 	}
 	);
-	waitForAppReady('.mqm-masthead > .masthead-bg-color > div > div:nth-child(2)', onAppReady);
+	waitForAppReady('.mqm-masthead', onAppReady);
 };
 
 log('content script loaded');
